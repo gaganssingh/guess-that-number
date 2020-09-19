@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Button, Image } from "react-native";
 import BodyText from "../components/BodyText";
+import MainButton from "../components/MainButton";
 import TitleText from "../components/TitleText";
 import Colors from "../constants/colors";
 
@@ -30,7 +31,10 @@ const GameOverScreen = (props) => {
             <BodyText style={{ ...styles.text, marginBottom: 20 }}>
                 The bot took {props.roundsNumber} rounds to guess.
             </BodyText>
-            <Button title="PLAY AGAIN" onPress={props.onRestart} />
+
+            <MainButton onPress={props.onRestart} opacity={0.3}>
+                PLAY AGAIN
+            </MainButton>
         </View>
     );
 };

@@ -12,6 +12,7 @@ import {
 import BodyText from "../components/BodyText";
 import Card from "../components/Card";
 import Input from "../components/Input";
+import MainButton from "../components/MainButton";
 import NumberContainer from "../components/NumberContainer";
 import TitleText from "../components/TitleText";
 import Colors from "../constants/colors";
@@ -59,10 +60,12 @@ const StartGameScreen = (props) => {
             <Card style={styles.summaryContainer}>
                 <Text>You selected</Text>
                 <NumberContainer>{selectedNumber}</NumberContainer>
-                <Button
-                    title="START"
+                <MainButton
                     onPress={() => props.onStartGame(selectedNumber)}
-                />
+                    opacity={0.3}
+                >
+                    LET'S GO
+                </MainButton>
             </Card>
         );
     }
@@ -109,7 +112,12 @@ const StartGameScreen = (props) => {
 };
 
 const styles = StyleSheet.create({
-    screen: { flex: 1, padding: 10, alignItems: "center" },
+    screen: {
+        flex: 1,
+        padding: 10,
+        alignItems: "center",
+        marginTop: "30%",
+    },
     title: {
         fontSize: 20,
         marginVertical: 10,

@@ -10,13 +10,24 @@ const GameOverScreen = (props) => {
             <TitleText>Game Over!</TitleText>
             <View style={styles.imageContainer}>
                 <Image
-                    source={require("../assets/success.png")}
+                    fadeDuration={200}
+                    source={{
+                        uri:
+                            "https://external-preview.redd.it/N8lAnTbplGS_iT-RxmfdHTnd6UcDCKsJ9nrcHbSr6LI.png?auto=webp&s=2c72785af23d69d61fae176c6b2561b6dd8647c7",
+                    }}
                     style={styles.image}
                     resizeMode="cover"
                 />
+                {/* <Image
+                    source={require("../assets/success.png")}
+                    style={styles.image}
+                    resizeMode="cover"
+                /> */}
             </View>
-            <BodyText>You had selected: {props.userNumber}</BodyText>
-            <BodyText>
+            <BodyText style={{ ...styles.text, marginTop: 20 }}>
+                You selected: {props.userNumber}
+            </BodyText>
+            <BodyText style={{ ...styles.text, marginBottom: 20 }}>
                 The bot took {props.roundsNumber} rounds to guess.
             </BodyText>
             <Button title="PLAY AGAIN" onPress={props.onRestart} />
@@ -36,6 +47,7 @@ const styles = StyleSheet.create({
         marginVertical: 15,
     },
     image: { width: "100%", height: "100%" },
+    text: { fontSize: 18 },
 });
 
 export default GameOverScreen;
